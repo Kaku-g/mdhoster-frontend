@@ -39,7 +39,9 @@ const UserPage = () => {
     if (user && token) {
       if (repo && path) {
         axios
-          .get(`http://localhost:5000/user/${user}/${token}/${repo}${path}`)
+          .get(
+            `https://mdhoster-backend.onrender.com/user/${user}/${token}/${repo}${path}`
+          )
           .then((response) => {
             console.log(response.data);
 
@@ -68,12 +70,14 @@ const UserPage = () => {
       console.log(data);
 
       const getUserRepo = async () => {
-        axios.get(`http://localhost:5000/user/${data}`).then((response) => {
-          if (!(response.data == "null")) {
-            setData(response.data);
-            console.log(response.data);
-          }
-        });
+        axios
+          .get(`https://mdhoster-backend.onrender.com/user/${data}`)
+          .then((response) => {
+            if (!(response.data == "null")) {
+              setData(response.data);
+              console.log(response.data);
+            }
+          });
       };
 
       getUserRepo();

@@ -14,7 +14,7 @@ const Temp = () => {
       const code = searchParams.get("code");
       console.log(code);
       axios
-        .get(`http://localhost:5000/token/${code}`)
+        .get(`https://mdhoster-backend.onrender.com/token/${code}`)
         .then((response) => {
           console.log(response.data);
           localStorage.setItem("userName", response.data.user);

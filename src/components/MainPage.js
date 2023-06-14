@@ -14,10 +14,12 @@ const MainPage = () => {
     // }
     console.log(user);
     const signIn = async () => {
-      axios.get("http://localhost:5000/login").then((response) => {
-        // console.log(response.data);
-        setUrl(response.data);
-      });
+      axios
+        .get("https://mdhoster-backend.onrender.com/login")
+        .then((response) => {
+          // console.log(response.data);
+          setUrl(response.data);
+        });
     };
     signIn();
   }, []);
