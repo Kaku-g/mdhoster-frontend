@@ -16,7 +16,9 @@ const MarkdownPage = () => {
   useEffect(() => {
     const getData = async () => {
       axios
-        .get(`http://localhost:5000/user/${params.user}/${params.repo}`)
+        .get(
+          `https://mdhoster-backend.onrender.com/user/${params.user}/${params.repo}`
+        )
         .then((response) => {
           console.log(response);
 
