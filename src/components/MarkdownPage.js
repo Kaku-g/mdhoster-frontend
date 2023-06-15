@@ -20,7 +20,7 @@ const MarkdownPage = () => {
           `https://mdhoster-backend.onrender.com/user/${params.user}/${params.repo}`
         )
         .then((response) => {
-          console.log(response);
+          //console.log(response);
 
           setData(response.data.code);
         });
