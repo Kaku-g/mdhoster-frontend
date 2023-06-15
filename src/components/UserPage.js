@@ -67,7 +67,7 @@ const UserPage = () => {
     }
     if (data) {
       setUser(data);
-      console.log(data);
+     // console.log(data);
 
       const getUserRepo = async () => {
         axios
@@ -75,7 +75,7 @@ const UserPage = () => {
           .then((response) => {
             if (!(response.data == "null")) {
               setData(response.data);
-              console.log(response.data);
+              //console.log(response.data);
             }
           });
       };
