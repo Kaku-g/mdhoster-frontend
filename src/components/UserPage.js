@@ -43,7 +43,7 @@ const UserPage = () => {
             `https://mdhoster-backend.onrender.com/user/${user}/${token}/${repo}${path}`
           )
           .then((response) => {
-            console.log(response.data);
+           // console.log(response.data);
 
             window.location.reload();
             navigate("/user");
