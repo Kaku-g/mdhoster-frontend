@@ -21,6 +21,7 @@ const Header = () => {
   useEffect(() => {
     // let userName = localStorage.getItem("userName");
     // setUser(userName);
+    // window.location.reload();
   }, [user]);
 
   return (

@@ -7,19 +7,25 @@ import UserPage from "./components/UserPage";
 import MarkdownPage from "./components/MarkdownPage";
 import Header from "./components/Header";
 import { UserProvider } from "./Context/UserContext";
+import { Track, TrackComponent } from "@kaku-g/react-analytics";
 
 function App() {
+  const TrackedMainPage = TrackComponent(MainPage);
+  const TrackedUserPage = TrackComponent(UserPage);
+  const TrackedMarkdownPage = TrackComponent(MarkdownPage);
   return (
     <BrowserRouter>
-      <UserProvider>
-        <Header />
-        <Routes>
-          <Route path="/" element={<MainPage />} />
-          <Route path="/token" element={<Temp />} />
-          <Route path="/user" element={<UserPage />} />
-          <Route path="/:user/:repo" element={<MarkdownPage />} />
-        </Routes>
-      </UserProvider>
+      <Track userId="119ddd48-21c8-494b-b55f-593eb86e02d9" project="hosting">
+        <UserProvider>
+          <Header />
+          <Routes>
+            <Route path="/" element={<TrackedMainPage />} />
+            <Route path="/token" element={<Temp />} />
+            <Route path="/user" element={<TrackedUserPage />} />
+            <Route path="/:user/:repo" element={<TrackedMarkdownPage />} />
+          </Routes>
+        </UserProvider>
+      </Track>
     </BrowserRouter>
   );
 }
