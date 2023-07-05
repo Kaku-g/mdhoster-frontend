@@ -12,11 +12,11 @@ const Temp = () => {
     const getUser = async () => {
       const searchParams = new URLSearchParams(window.location.search);
       const code = searchParams.get("code");
-      console.log(code);
+     // console.log(code);
       axios
         .get(`https://mdhoster-backend.onrender.com/token/${code}`)
         .then((response) => {
-          console.log(response.data);
+         // console.log(response.data);
           localStorage.setItem("userName", response.data.user);
           localStorage.setItem("userToken", response.data.token);
 

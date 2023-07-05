@@ -9,7 +9,7 @@ function UserProvider({ children }) {
   useEffect(() => {
     let user = localStorage.getItem("userName");
     let token = localStorage.getItem("userToken");
-    console.log(user, token);
+    //console.log(user, token);
     setUser(user);
     setToken(token);
   }, [user]);
