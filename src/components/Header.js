@@ -23,7 +23,10 @@ useEffect(()=>{
 setUserName(user);
 
 },[user])
-  
+
+  useEffect(()=>{
+
+  },[userName])
   // useEffect(() => {
   //   // let userName = localStorage.getItem("userName");
   //   // setUser(userName);
