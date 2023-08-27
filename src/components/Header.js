@@ -4,7 +4,8 @@ import { UserContext } from "../Context/UserContext";
 
 const Header = () => {
   const { user, token, handleLogin, handleLogout } = useContext(UserContext);
-  // const [user, setUser] = useState("");
+  const [userName, setUserName] = useState("");
+  
 
   const navigate = useNavigate();
 
@@ -17,20 +18,25 @@ const Header = () => {
   //   navigate("/");
   //   window.location.reload();
   // };
+useEffect(()=>{
 
-  useEffect(() => {
-    // let userName = localStorage.getItem("userName");
-    // setUser(userName);
-    // window.location.reload();
-  }, [user]);
+setUserName(user);
+
+},[user])
+  
+  // useEffect(() => {
+  //   // let userName = localStorage.getItem("userName");
+  //   // setUser(userName);
+  //   // window.location.reload();
+  // }, [user]);
 
   return (
     <header className="bg-gray-900 text-white py-4 px-6 flex items-center justify-between mb-10">
       <h1 className="text-2xl font-bold">Md Hoster</h1>
-      {user && (
+      {userName && (
         <div className="flex ">
           <h1 className=" flex text-xl font-bold mr-4 text-center items-center ">
-            Hey {user}
+            Hey {userName}
           </h1>
 
           <button
@@ -42,7 +48,7 @@ const Header = () => {
         </div>
       )}
 
-      {!user && (
+      {!userName && (
         <button
           onClick={handleLogin}
           className="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded-md"
